@@ -54,7 +54,7 @@ def generate_opinion(girlInfo, boyInfo):
             },
             {
                 "role": "user",
-                "content": f"By using the pickup line as - {boyInfo['pickupline']}. What do you think is her reaction to this pickup line . Her profession is {girlInfo['occupation']} , hobby as {girlInfo['hobbies']} and nature as {girlInfo['nature']}. Don't reveal you are an AI, just provide opinion as a loveguru. Answer sholud be to the point and fun to read"
+                "content": f" By using the pickup line as - {boyInfo['pickupline']}. What do you think is her reaction to this pickup line . Her profession is {girlInfo['occupation']} , hobby as {girlInfo['hobbies']} and nature as {girlInfo['nature']}. Don't reveal you are an AI, just provide opinion as a loveguru. Answer sholud be to the point and fun to read"
             }
         ])
     return response['choices'][0]['message']['content']
