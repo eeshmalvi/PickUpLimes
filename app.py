@@ -3,10 +3,26 @@ import openai
 import os
 
 app = Flask(__name__)
-# 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
+
+# encrypting the secret key
+
+
+def decrypt(encrypted_message, key):
+    decrypted_chars = []
+    for char in encrypted_message:
+        decrypted_char = chr((ord(char) - key) % 128)
+        decrypted_chars.append(decrypted_char)
+    return ''.join(decrypted_chars)
+
+
+secret_key = 3
+encrypted_message = r"vn0nZYyzO6vu\\RI6ksw6YgW6EoenIMkqElXtyY8xemlPtvy\7z"
+PickLimesKey = decrypt(encrypted_message, secret_key)
+
+
 girlInfo = {}
 boyInfo = {}
-OPENAI_API_KEY = "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"
+OPENAI_API_KEY = PickLimesKey
 openai.api_key = OPENAI_API_KEY
 
 
