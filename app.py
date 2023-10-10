@@ -3,10 +3,10 @@ import openai
 import os
 
 app = Flask(__name__)
-
+# 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
 girlInfo = {}
 boyInfo = {}
-OPENAI_API_KEY = "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"
+OPENAI_API_KEY = "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"
 openai.api_key = OPENAI_API_KEY
 
 
@@ -68,5 +68,5 @@ def getresult():
     return render_template('index.html', info=info)
 
 
-# if __name__ == "__main__":
-#     app.run(debug=True)
+if __name__ == "__main__":
+    app.run(debug=True)
