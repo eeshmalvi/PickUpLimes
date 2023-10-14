@@ -1,3 +1,105 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static',filename='css/main.css') }}"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alegreya&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>PickUpLimes</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="inline-boxes">
+        <div class="girlbox zoomeffectclass">
+          <img src="/static/girl.jpg" alt="" height="500px" class="child" />
+          <div class="child">
+            <form action="/girl" method="post">
+              <label for="occupation">Profession:</label>
+              <input
+                type="text"
+                id="occupation"
+                name="occupation"
+                required
+              /><br /><br />
+
+              <label for="hobbies">Hobbies:</label>
+
+              <input
+                type="text"
+                id="hobbies"
+                name="hobbies"
+                required
+              /><br /><br />
+
+              <label for="nature">Nature:</label>
+
+              <input
+                type="text"
+                id="nature"
+                name="nature"
+                required
+              /><br /><br />
+
+              <input type="submit" value="Submit" />
+            </form>
+
+            <div style="background-color: rgb(66, 65, 60)">
+              {{info["girlinfo"] }}
+            </div>
+          </div>
+        </div>
+        <div class="boybox zoomeffectclass">
+          <div class="child">
+            <form action="/boy" method="post">
+              <label for="pickupline"> PickUpLine :</label>
+              <input
+                type="text"
+                id="pickupline"
+                name="pickupline"
+                required
+              /><br /><br />
+
+              <input type="submit" value="Submit" />
+            </form>
+            <div style="background-color: rgb(66, 65, 60)">
+              {{info["boyinfo"] }}
+            </div>
+          </div>
+          <img
+            class="zoomeffectclass"
+            src="/static/boy.jpg"
+            alt=""
+            height="420px"
+            width="400px"
+            class="child"
+          />
+        </div>
+      </div>
+
+      <div class="resultbox zoomeffectclass">
+        <form action="/result" method="post">
+          <input
+            type="submit"
+            value="Calculate your Luck"
+            style="display: inline; background-color: blueviolet"
+          />
+        </form>
+
+        <div id="ansdisplay" class="fade">{{info["result"]}}</div>
+      </div>
+    </div>
+  </body>
+</html> -->
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -51,9 +153,32 @@
 
               <input type="submit" value="Submit" />
             </form>
-            <div style="background-color: rgb(66, 65, 60)">
+
+            <!-- <div style="background-color: rgb(220, 96, 29)">
               {{info["girlinfo"] }}
+            </div> -->
+
+            {% if info.girlinfo | length == 0 %}
+            <div
+              style="
+                background-color: rgb(255, 143, 0);
+                margin: 2px auto;
+                padding: 5px auto;
+              "
+            >
+              Please Provide the Information
             </div>
+            {% else %}
+            <div
+              style="
+                background-color: rgb(93, 220, 29);
+                margin: 2px auto;
+                padding: 5px auto;
+              "
+            >
+              Got the Information !!!
+            </div>
+            {% endif %}
           </div>
         </div>
         <div class="boybox zoomeffectclass">
@@ -69,9 +194,30 @@
 
               <input type="submit" value="Submit" />
             </form>
-            <div style="background-color: rgb(66, 65, 60)">
+            <!-- <div style="background-color: rgb(66, 65, 60)">
               {{info["boyinfo"] }}
+            </div> -->
+            {% if info.boyinfo | length == 0 %}
+            <div
+              style="
+                background-color: rgb(255, 143, 0);
+                margin: 2px auto;
+                padding: 5px auto;
+              "
+            >
+              Please Provide the Information
             </div>
+            {% else %}
+            <div
+              style="
+                background-color: rgb(93, 220, 29);
+                margin: 2px auto;
+                padding: 5px auto;
+              "
+            >
+              Got the Information !!!
+            </div>
+            {% endif %}
           </div>
           <img
             class="zoomeffectclass"
