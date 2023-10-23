@@ -22,6 +22,17 @@
         <div class="girlbox zoomeffectclass">
           <img src="/static/girl.jpg" alt="" height="500px" class="child" />
           <div class="child">
+            <div
+              class="shadowed-div"
+              style="
+                color: white;
+                font-weight: bold;
+                background-color: blueviolet;
+                padding: 1px;
+              "
+            >
+              Step 1
+            </div>
             <form action="/girl" method="post">
               <label for="occupation">Profession:</label>
               <input
@@ -54,6 +65,7 @@
 
             {% if info.girlinfo | length == 0 %}
             <div
+              class="shadowed-div"
               style="
                 background-color: rgb(255, 143, 0);
                 margin: 2px auto;
@@ -64,6 +76,7 @@
             </div>
             {% else %}
             <div
+              class="shadowed-div"
               style="
                 background-color: rgb(93, 220, 29);
                 margin: 2px auto;
@@ -77,6 +90,17 @@
         </div>
         <div class="boybox zoomeffectclass">
           <div class="child">
+            <div
+              class="shadowed-div"
+              style="
+                color: white;
+                font-weight: bold;
+                background-color: blueviolet;
+                padding: 1px;
+              "
+            >
+              Step 2
+            </div>
             <form action="/boy" method="post">
               <label for="pickupline"> PickUpLine :</label>
               <input
@@ -91,6 +115,7 @@
 
             {% if info.boyinfo | length == 0 %}
             <div
+              class="shadowed-div"
               style="
                 background-color: rgb(255, 143, 0);
                 margin: 2px auto;
@@ -101,6 +126,7 @@
             </div>
             {% else %}
             <div
+              class="shadowed-div"
               style="
                 background-color: rgb(93, 220, 29);
                 margin: 2px auto;
@@ -130,11 +156,22 @@
       </div>
 
       <div class="resultbox zoomeffectclass">
+        <div
+          class="shadowed-div"
+          style="
+            color: white;
+            font-weight: bold;
+            background-color: blueviolet;
+            padding: 10px;
+          "
+        >
+          Step 3
+        </div>
         <form action="/result" method="post">
           <input
             type="submit"
             value="Calculate your Luck"
-            style="display: inline; background-color: blueviolet"
+            style="display: inline; background-color: rgb(252, 108, 133)"
           />
         </form>
 
